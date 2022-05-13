@@ -352,6 +352,32 @@ body.menu-expanded button path {
   gap: 6rem;
 }
 
+@property --num {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+#home .stat h3 {
+  transition: --num 1s;
+  counter-reset: num var(--num);
+}
+
+#home .stat h3::after {
+  content: counter(num);
+}
+
+#home .stats.show .stat:nth-child(1) h3 {
+  --num: 3500;
+}
+
+#home .stats.show .stat:nth-child(2) h3 {
+  --num: 150;
+}
+#home .stats.show .stat:nth-child(3) h3 {
+  --num: 10;
+}
+
 #home .stat h3 {
   font-size: 4.8rem;
   color: var(--headline);

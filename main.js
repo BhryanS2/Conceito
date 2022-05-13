@@ -24,6 +24,12 @@ function activateMenuAtCurrentSection(section) {
   const sectionId = section.getAttribute("id");
   const menuElement = document.querySelector(`.menu a[href*=${sectionId}]`);
 
+  if (sectionId === "home") {
+    // get stats element
+    const stats = document.querySelector(".stats");
+    stats.classList.toggle("show", sectionBoundaries);
+  }
+
   menuElement.classList.remove("active");
   if (sectionBoundaries) {
     menuElement.classList.add("active");
