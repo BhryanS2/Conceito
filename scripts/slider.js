@@ -42,3 +42,7 @@ function controller(eventClick) {
   }
   state.updateHtml();
 }
+
+window.addEventListener("load", () => {
+  state.updateHtml();
+});

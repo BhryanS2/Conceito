@@ -5,7 +5,7 @@ onScroll();
 function onScroll() {
   showNavOnScroll();
   showBackToTopButtonOnScroll();
-  const sections = [home, services, about, contact];
+  const sections = [home, services, showServices, about, contact];
   sections.forEach((section) => activateMenuAtCurrentSection(section));
 }
 
@@ -66,7 +66,8 @@ scrollReveal.reveal(`
   #home .stats, 
   #services,
   #services header,
-  #services .card
-  #about, 
+  #services .card,
+  #showServices,
+  #about,
   #about header, 
   #about .content`);
