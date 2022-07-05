@@ -24,11 +24,7 @@ function activateMenuAtCurrentSection(section) {
   const sectionId = section.getAttribute("id");
   const menuElement = document.querySelector(`.menu a[href*=${sectionId}]`);
 
-  if (sectionId === "home") {
-    // get stats element
-    const stats = document.querySelector(".stats");
-    stats.classList.toggle("show", sectionBoundaries);
-  }
+  if (sectionId === "home") showNumbersInStats(sectionBoundaries);
 
   menuElement.classList.remove("active");
   if (sectionBoundaries) {
@@ -38,12 +34,15 @@ function activateMenuAtCurrentSection(section) {
 
 function showNavOnScroll() {
   const isScroll = scrollY > 0;
-  navigation.classList.toggle("scroll", isScroll);
+  const nav = document.querySelector("#navigation");
+  nav.classList.toggle("scroll", isScroll);
+  // navigation.classList.toggle("scroll", isScroll);
 }
 
 function showBackToTopButtonOnScroll() {
   const isScroll = scrollY > 0;
   backToTopButton.classList.toggle("show", isScroll);
+  // console.log(backToTopButton);
 }
 
 function openMenu() {
@@ -54,11 +53,14 @@ function closeMenu() {
   document.body.classList.remove("menu-expanded");
 }
 
-ScrollReveal({
-  origin: "top",
-  distance: "30px",
-  duration: 700,
-}).reveal(`
+function showNumbersInStats(sectionBoundaries) {
+  const stats = document.querySelector(".stats");
+  stats.classList.toggle("show", sectionBoundaries);
+}
+
+// create scroll revel event
+const scrollReveal = new ScrollReveal();
+scrollReveal.reveal(`
   #home, 
   #home img, 
   #home .stats, 

@@ -368,14 +368,14 @@ body.menu-expanded button path {
 }
 
 #home .stats.show .stat:nth-child(1) h3 {
-  --num: 3500;
+  --num: 17;
 }
 
 #home .stats.show .stat:nth-child(2) h3 {
-  --num: 150;
+  --num: 100;
 }
 #home .stats.show .stat:nth-child(3) h3 {
-  --num: 10;
+  --num: 50;
 }
 
 #home .stat h3 {
@@ -433,6 +433,35 @@ body.menu-expanded button path {
   margin-bottom: 6rem;
 }
 
+/*=== CARROSSEL =================================*/
+#showServices {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+#showServices .controllers {
+  display: flex;
+  justify-content: space-between;
+}
+
+#showServices .images {
+  background-color: var(--brand-beige);
+  height: 600px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+#showServices .lazyload {
+  border: 1px solid var(--brand-light);
+  height: 100%;
+  border-radius: 0.6rem;
+  object-fit: contain;
+}
+
 /*=== CONTACT =================================*/
 #contact {
   text-align: left;
@@ -450,10 +479,16 @@ body.menu-expanded button path {
   margin-bottom: 3.2rem;
 }
 
-#contact ul li {
+#contact ul li,
+#contact ul li a {
   display: flex;
   align-items: center;
   gap: 0.8rem;
+}
+
+#contact ul li a {
+  color: var(--paragraph);
+  text-decoration: none;
 }
 
 /*=== FOOTER =================================*/
@@ -491,6 +526,11 @@ footer .social-links {
   justify-content: flex-start;
 }
 
+footer .social-links img {
+  width: 25px;
+  height: 25px;
+}
+
 /* BACK TO TOP */
 #backToTopButton {
   position: fixed;
@@ -508,6 +548,10 @@ footer .social-links {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+}
+
+#backToTopButton.show.footer {
+  fill: #fff;
 }
 
 /*=== RESPONSIVO =================================*/
@@ -743,6 +787,15 @@ footer .social-links {
 
   #about .content p {
     margin-bottom: 0;
+  }
+
+  /*=== Slider ==================================*/
+
+  #showServices .lazyload {
+    border: 1px solid var(--brand-light);
+    width: 100%;
+    border-radius: 0.6rem;
+    object-fit: contain;
   }
 
   /*=== CONTACT =================================*/
